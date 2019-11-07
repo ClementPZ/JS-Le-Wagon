@@ -7,15 +7,4 @@ const evenOrOdd = (number) => {
   }
 };
 
-console.log(evenOrOdd(3));
-
 module.exports = evenOrOdd; // Do not remove. We need this for the spec to know about your method.
-
-
-
-
-// const number = 13;
-
-//   const isOdd = number % 2 !== 0;
-
-//   console.log(isOdd);
