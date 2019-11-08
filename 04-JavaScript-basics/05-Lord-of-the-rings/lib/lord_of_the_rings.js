@@ -8,17 +8,29 @@ const buildSoldierObject = (battlefield) => {
   const battlefieldArray = battlefield.split(',');
   battlefieldArray.forEach((element) => {
     const soldierType = element.split(':');
-    console.log(soldierType[0]);
     team[soldierType[0]] = Number.parseInt(soldierType[1], 10);
   });
   return team
 };
 
-const goodGuys = 'Hobbits:4,Dwarves:1,Elves:1,Goblins:100,UrukHai:1';
-console.log(buildSoldierObject(goodGuys));
+const goodGuys = 'Hobbits:4,Dwarves:1,Elves:1,Goblins:1,UrukHai:1';
 
 const whoWinsTheWar = (battlefield) => {
-  // TODO: Based on the battlefield's description (it's a String), return "Good", "Evil" or "Tie"
+  const soldierObject = buildSoldierObject(battlefield);
+  let goodGuysPoints = 0;
+  let badGuysPoints = 0;
+  Object.keys(soldierObject).forEach((key) => {
+    isGood(key) ? goodGuysPoints += soldierObject[key] : badGuysPoints += soldierObject[key];
+  });
+  if (goodGuysPoints === badGuysPoints || battlefield === "") {
+    return "Tie";
+  } else if (goodGuysPoints > badGuysPoints) {
+      return "Good";
+  } else {
+      return "Evil";
+  }
 };
+
+console.log(whoWinsTheWar(goodGuys));
 
 module.exports = { whoWinsTheWar, buildSoldierObject, isGood }; // Do not remove this line
