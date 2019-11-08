@@ -1,16 +1,16 @@
 const isGood = (soldierType) => {
   const goodGuys = ['hobbits', 'elves', 'dwarves', 'eagles'];
-  return goodGuys.includes(soldierType.toLowerCase()) ? true : false;
+  return goodGuys.includes(soldierType.toLowerCase());
 };
 
 const buildSoldierObject = (battlefield) => {
-  let team = {};
+  const team = {};
   const battlefieldArray = battlefield.split(',');
   battlefieldArray.forEach((element) => {
     const soldierType = element.split(':');
     team[soldierType[0]] = Number.parseInt(soldierType[1], 10);
   });
-  return team
+  return (team);
 };
 
 const goodGuys = 'Hobbits:4,Dwarves:1,Elves:1,Goblins:1,UrukHai:1';
