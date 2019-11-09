@@ -16,11 +16,16 @@ const dataset = (element) => {
   const divSplit = div.split(" ");
   // ["data-id='42'","data-price='15'", "data-category='popular'"]
   // forEach() includes("data") ? split("=") --> binome = ["data-price", "15"];
-  const divData = divSplit.forEach((param) => {
-    if param.includes("data") ? divData += param : divData = divData;
+  let divData = [];
+  divData = divSplit.forEach((parametre) => {
+    if (parametre.includes("data")) {
+      divData += parametre;
+      // console.log(divData);
+    }
   });
-
   return divData;
+
+
 
 // Object.keys(datas).forEach
 
