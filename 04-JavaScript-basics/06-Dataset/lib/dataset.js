@@ -14,28 +14,39 @@ const dataset = (element) => {
 // split(' ')
   const div = element;
   const divSplit = div.split(" ");
-  // ["data-id='42'","data-price='15'", "data-category='popular'"]
-  // forEach() includes("data") ? split("=") --> binome = ["data-price", "15"];
-  let divData = [];
-  divData = divSplit.forEach((parametre) => {
-    if (parametre.includes("data")) {
-      divData += parametre;
-      // console.log(divData);
-    }
-  });
-  return divData;
 
-
-
-// Object.keys(datas).forEach
-
-// const datas = {};
-
-// return (datas);
-
+  return "hello";
 };
+
+
+
 
 const div = '<div class="card" data-id="42" data-price="15" data-category="popular">';
 console.log(dataset(div));
 
 module.exports = dataset; // Do not remove.
+
+
+
+
+
+
+
+
+//  let datas = new Object();
+//   let divData = [];
+//   Object.keys(datas).forEach((key) => {
+
+// Input : const object = { 70: 'x', 21: 'y', 35: 'z' };
+//         console.log(Object.keys(object));
+// Output : ['21', '35', '70']
+
+
+//     divData = divSplit.forEach((parametre) => {
+//       if (parametre.includes("data")) {
+//         parametre = parametre.replace('data-','');
+//         divData.push(parametre.split("="));
+//         console.log(divData);
+//       }
+//     });
+//   });
